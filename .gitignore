@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.env
+venv/
+env/
+
+# Logs and results
+*.log
+*.txt
+# 但保留 prompts/analysis_prompt_template.txt
+!prompts/analysis_prompt_template.txt
+
+# Config
+config.json
+
+# IDE
+.vscode/
+.idea/

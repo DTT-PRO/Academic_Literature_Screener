@@ -1,0 +1,11 @@
+{
+  "api_provider": "qwen",
+  "api_key": "YOUR_API_KEY_HERE",
+  "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+  "model_name": "qwen-vl-max",
+  "pdf_folder": "./papers",
+  "output_file": "screening_results.txt",
+  "max_workers": 2,
+  "max_pages_per_pdf": 10,
+  "prompt_template_file": "./prompts/analysis_prompt_template.txt"
+}

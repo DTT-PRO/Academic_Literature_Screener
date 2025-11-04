@@ -16,7 +16,7 @@ This project was initially developed to screen papers on **sodium-ion battery ca
 ## Project Structure
 
 ```
-/sif_literature_screener/
+/Academic_Literature_Screener/
 ├── src/                  # Source code
 ├── prompts/              # Prompt templates
 ├── .gitignore
@@ -30,14 +30,19 @@ This project was initially developed to screen papers on **sodium-ion battery ca
 
 1.  **Clone the repository:**
     ```bash
-    git clone <your-repository-url>
-    cd sif_literature_screener
+    git clone https://github.com/DTT-PRO/Academic_Literature_Screener.git
+    cd Academic_Literature_Screener
     ```
 
 2.  **Create a virtual environment (recommended):**
     ```bash
+    # For Windows
     python -m venv venv
-    source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
+    venv\Scripts\activate
+    
+    # For macOS / Linux
+    python -m venv venv
+    source venv/bin/activate
     ```
 
 3.  **Install the required dependencies:**
@@ -88,4 +93,4 @@ The script will start processing the files, and a progress bar will be displayed
 
 ## License
 
-This project is licensed under the MIT License. See the `LICENSE` file for details.
+This project is licensed under the MIT License.

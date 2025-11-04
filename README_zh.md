@@ -16,14 +16,9 @@
 ## 📂 项目结构
 
 ```
-/sif_literature_screener/
+/Academic_Literature_Screener/
 ├── src/                  # 源代码目录
-│   ├── api_client.py       # API 客户端模块
-│   ├── config_manager.py   # 配置管理模块
-│   ├── file_processor.py   # 文件处理模块
-│   └── main_processor.py   # 核心业务逻辑模块
 ├── prompts/              # Prompt 模板目录
-│   └── analysis_prompt_template.txt
 ├── .gitignore            # Git 忽略文件配置
 ├── config.example.json   # 配置文件示例
 ├── README.md             # 项目说明（英文版）
@@ -40,8 +35,8 @@
 
 **a. 克隆仓库**
 ```bash
-git clone <你的仓库URL>
-cd sif_literature_screener
+git clone https://github.com/DTT-PRO/Academic_Literature_Screener.git
+cd Academic_Literature_Screener
 ```
 
 **b. 创建并激活虚拟环境 (推荐)**
@@ -77,9 +72,6 @@ cp config.example.json config.json
 -   `"max_workers"`: 用于处理文件的并发线程数。建议初次使用时设置为 `1` 或 `2`，以避免超出 API 的速率限制。
 -   其他设置可根据需要修改。
 
-**c. 自定义分析标准 (可选)**
-如果您想筛选其他领域的文献，请修改 `prompts/analysis_prompt_template.txt` 文件。根据您的需求，重点修改 `Analysis Topic`（分析主题）、`Key Areas of Interest`（关键研究点）和 `Exclusion Criteria`（排除标准）部分。
-
 ### 3. 运行
 
 当您配置好 `config.json` 并将 PDF 文件放入指定文件夹后，在终端中运行以下命令即可启动筛选程序：
@@ -89,18 +81,6 @@ python run_screener.py
 
 程序将开始处理文件，并显示一个进度条。处理完成后，摘要信息将打印在控制台，详细的分析结果会保存在您配置的 `output_file` 文件中（默认为 `screening_results.txt`）。
 
-## ⚙️ 工作原理
-
-1.  **初始化**：脚本加载并验证 `config.json` 中的配置。
-2.  **文件发现**：扫描 `pdf_folder` 文件夹，查找所有 `.pdf` 文件。
-3.  **任务分发**：为每个 PDF 创建一个处理任务，并使用多线程执行器进行管理。
-4.  **单文件处理流程**：
-    -   从 PDF 的前几页提取文本内容。
-    -   使用 `prompts/` 目录下的模板和提取的文本，构建一个完整的 Prompt。
-    -   将此 Prompt 发送到配置好的 LLM API。
-    -   解析 LLM 返回的结构化文本响应。
-5.  **结果汇总**：收集所有文件的分析结果，并将其保存到一个格式化的输出文件中。
-
 ## 📜 许可证
 
-本项目采用 MIT 许可证。详情请参阅 `LICENSE` 文件。
+本项目采用 MIT 许可证。
